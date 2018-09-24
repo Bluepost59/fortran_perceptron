@@ -43,14 +43,15 @@ contains
     double precision :: y         ! true answer
     logical,optional :: answered_error              ! error
 
-    double precision :: z = 0d0
+    double precision :: z 
     double precision :: output
     integer :: i
-
+    
     answered_error = .false.
 
     if(size(mydata) /= self%dimsion) return
 
+    z=0d0
     do i=1, size(mydata)
        z = z + mydata(i) *self%w(i)
     end do
